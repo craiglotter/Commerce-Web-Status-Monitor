@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT type="Advanced Installer" version="1.9" modules="professional" RootPath=".">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="ARPHELPTELEPHONE" Value="650 5233"/>
+    <ROW Property="ProductName" Value="Commerce Web Status Monitor"/>
+    <ROW Property="ALLUSERS" Value="2"/>
+    <ROW Property="ARPCONTACT" Value="Craig Lotter"/>
+    <ROW Property="BannerBitmap" Value="style4_banner.jpg"/>
+    <ROW Property="ProductVersion" Value="1.0.0"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{332079C4-8440-4048-AA1A-855DF6504FE5}"/>
+    <ROW Property="ProductCode" Value="{E8BB9A29-7020-4A45-860A-7EE8B6536391}"/>
+    <ROW Property="ARPPRODUCTICON" Value="controlPanelIcon.exe"/>
+    <ROW Property="ARPURLINFOABOUT" Value="http://www.commerce.uct.ac.za"/>
+    <ROW Property="DialogBitmap" Value="style4_dialog.jpg"/>
+    <ROW Property="Manufacturer" Value="Commerce I.T."/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="StartupFolder" Directory_Parent="TARGETDIR" DefaultDir="Startu~1|StartupFolder" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" Directory_Parent="" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Commerce_Web_Status_Monitor.exe" ComponentId="{EA0B5B42-BBCB-444B-A397-A2F6AB7F2EC7}" Directory_="TARGETDIR" Attributes="0" Condition="" KeyPath="Commerce_Web_Status_Monitor.exe" FullKeyPath="TARGETDIR\Commerce Web Status Monitor.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Feature_Parent="" Title="MainFeature" Description="Description" Display="2" Level="1" Directory_="TARGETDIR" Attributes="0" Components="Commerce_Web_Status_Monitor.exe"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Commerce_Web_Status_Monitor.exe" Component_="Commerce_Web_Status_Monitor.exe" FileName="Commer~1.exe|Commerce Web Status Monitor.exe" Version="" Language="" Attributes="" SourcePath="..\Commerce Web Status Monitor\obj\Release\Commerce Web Status Monitor.exe" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Source="" Target="A higher version of [ProductName] is installed."/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR" Type="307" Source="TARGETDIR" Target="[ProgramFilesFolder]\[ProductName]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="UpgradeCode" VersionMin="" VersionMax="ProductVersion" Language="" Attributes="1025" Remove=""/>
+    <ROW UpgradeCode="UpgradeCode" VersionMin="ProductVersion" VersionMax="" Language="" Attributes="2" Remove=""/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMergeModsComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Commerce_Web_Status_Monitor" Directory_="StartupFolder" Name="Commer~1|Commerce Web Status Monitor" Component_="Commerce_Web_Status_Monitor.exe" Target="[TARGETDIR]Commerce Web Status Monitor.exe" Arguments="" Description="" Hotkey="0" Icon_="controlPanelIcon.exe" IconIndex="0" ShowCmd="1" WkDir=""/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="controlPanelIcon.exe" SourcePath="..\Commerce Web Status Monitor\Images\explorer_icon.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="style4_banner.jpg" SourcePath="&lt;style4-banner.jpg&gt;"/>
+    <ROW Name="style4_dialog.jpg" SourcePath="&lt;style4-dialog.jpg&gt;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ATTRIBUTE name="Start" value="WelcomeDlg FolderDlg VerifyReadyDlg"/>
+    <ATTRIBUTE name="Progress" value="ProgressDlg"/>
+    <ATTRIBUTE name="End" value="ExitDialog"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiMediaComponent">
+    <ATTRIBUTE name="InstallationType" value="1"/>
+    <ATTRIBUTE name="MediaSize" value="0"/>
+    <ATTRIBUTE name="Compress" value="1"/>
+    <ATTRIBUTE name="Package" value="6"/>
+    <ATTRIBUTE name="IconPath" value="..\Commerce Web Status Monitor\Images\explorer_icon.ico?0"/>
+  </COMPONENT>
+</DOCUMENT>
